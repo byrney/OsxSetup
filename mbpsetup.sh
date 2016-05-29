@@ -67,7 +67,9 @@ function bootstrap() {
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
     export HOMEBREW_NO_EMOJI=1
     export HOMEBREW_NO_ANALYTICS=1
-    once "xcode" "xcode-select -p" "xcode-select --install"
+    #
+    # brew now installs xcode itself if not present
+    #once "xcode" "xcode-select -p" "xcode-select --install"
     if which -s brew ; then
         echo "homebrew already installed"
     else
