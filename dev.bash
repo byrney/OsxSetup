@@ -2,6 +2,7 @@
 inst_brew ruby
 inst_brew homebrew/completions/ruby-completion
 inst_brew homebrew/completions/rake-completion
+inst_brew homebrew/completions/gem-completion
 inst_brew git-sh
 inst_brew node
 inst_brew reattach-to-user-namespace
