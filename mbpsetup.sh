@@ -1,5 +1,9 @@
 #!/bin/bash -eu
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export HOMEBREW_NO_EMOJI=1
+export HOMEBREW_NO_ANALYTICS=1
+
 # Perform an action once.
 #
 #    $1 - title of the action to print
