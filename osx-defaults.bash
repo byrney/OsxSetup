@@ -118,10 +118,10 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 # launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 
 # Disable smart quotes as they’re annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Set a custom wallpaper image. `DefaultDesktop.jpg` is already a symlink, and
 # all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
@@ -498,7 +498,7 @@ defaults write com.apple.mail DisableSendAnimations -bool true
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
-defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
+defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
 
 # Display emails in threaded mode, sorted by date (oldest at the top)
 #defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
@@ -655,7 +655,7 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
 # Disable smart quotes as it’s annoying for messages that contain code
-#defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
+defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
 # Disable continuous spell checking
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
