@@ -700,6 +700,12 @@ defaults write org.m0k.transmission WarningDonate -bool false
 # Hide the legal disclaimer
 defaults write org.m0k.transmission WarningLegal -bool false
 
+###############################################################################
+# Photos                                                                      #
+###############################################################################
+
+# stop opening photos when a phone is attached
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
 # Kill affected applications                                                  #
