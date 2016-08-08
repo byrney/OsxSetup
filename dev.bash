@@ -16,6 +16,7 @@ inst_brew subversion
 inst_brew trash
 inst_brew shellcheck
 inst_cask dash
+inst_cask dashlane
 inst_cask iphoney
 inst_gem bundler
 inst_gem terminal-notifier

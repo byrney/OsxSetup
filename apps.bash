@@ -1,6 +1,5 @@
 #!/bin/bash
 
-inst_cask dashlane
 inst_cask cord
 inst_cask vlc
 inst_cask virtualbox
