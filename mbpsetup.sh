@@ -61,7 +61,7 @@ function inst_gem() {
     once "$title" "$check" "$cmd"
 }
 
-# Install xcode commandline, homebrew, homebrew cask
+# Install homebrew, homebrew cask
 #
 function bootstrap() {
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
