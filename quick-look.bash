@@ -10,6 +10,7 @@ inst_cask qlprettypatch
 inst_cask qlmarkdown
 inst_cask quicklook-csv
 inst_cask webpquicklook
+inst_cask gislook
 
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
