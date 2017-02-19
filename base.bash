@@ -2,7 +2,7 @@
 #
 # Must haves brew
 #
-for brew in "bash-completion" git tmux the_silver_searcher ; do
+for brew in "bash-completion" git tmux the_silver_searcher vim; do
     inst_brew "$brew"
 done
 

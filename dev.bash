@@ -15,6 +15,7 @@ inst_brew colordiff
 inst_brew subversion
 inst_brew trash
 inst_brew shellcheck
+inst_brew cmake
 inst_cask dash
 inst_cask dashlane
 inst_cask iphoney
