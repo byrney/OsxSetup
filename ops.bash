@@ -6,3 +6,5 @@ inst_cask vagrant
 inst_brew homebrew/completions/vagrant-completion
 inst_cask chefdk
 inst_cask xquartz
+inst_cask docker
+
