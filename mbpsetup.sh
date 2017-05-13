@@ -4,6 +4,17 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export HOMEBREW_NO_EMOJI=1
 export HOMEBREW_NO_ANALYTICS=1
 
+# Print a justified status message
+#
+#   $1 - name of the package
+#   $2 - package status
+function status(){
+    local line='---------------------------------------------------'
+    local title="$1"
+    local stat="$2"
+    printf "%s %s [%s]\n" "$title" "${line:${#title}}" "$stat"
+}
+
 # Perform an action once.
 #
 #    $1 - title of the action to print
@@ -16,14 +27,14 @@ function once() {
     local cmd="$3"
     local post="${4:-""}"
     if eval "$check" > /dev/null ; then
-        echo "$title: already installed"
+        status "$title" "NOP"
     else
-        echo "================ START       $title ==============="
+        status "$title" "START"
         $cmd
         if [[ -z "$post" ]] ; then
             $post
         fi
-        echo "================ END         $title ==============="
+        status "$title" "END"
     fi
 }
 
@@ -61,20 +72,34 @@ function inst_gem() {
     once "$title" "$check" "$cmd"
 }
 
+# Install a conda package  (need to run conda.bash first)
+#
+#
+function inst_conda(){
+    local conda="$HOME/miniconda3/bin/conda"
+    local title="$1"
+    local pkg="$1"
+    local cmd="$conda install --yes $pkg"
+    local check="$conda list | grep -qE ^$pkg"
+    once "$title" "$check" "$cmd"
+}
+
 # Install homebrew, homebrew cask
 #
 function bootstrap() {
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
     export HOMEBREW_NO_EMOJI=1
     export HOMEBREW_NO_ANALYTICS=1
+    export HOMEBREW_NO_AUOT_UPDATE=1
     #
     # brew now installs xcode itself if not present
     #once "xcode" "xcode-select -p" "xcode-select --install"
     if which -s brew ; then
-        echo "homebrew already installed"
+        status "homebrew" "NOP"
     else
+        status "homebrew" "START"
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && brew update
-        echo "homebrew installed"
+        status "homebrew" "END"
     fi
 }
 
