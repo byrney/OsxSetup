@@ -20,6 +20,6 @@ inst_cask dash
 inst_cask dashlane
 #inst_cask iphoney
 inst_gem bundler
-inst_gem terminal-notifier
+#inst_gem terminal-notifier
 inst_cask kdiff3
 
