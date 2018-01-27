@@ -5,6 +5,7 @@ inst_brew rake-completion
 inst_brew gem-completion
 inst_brew git-sh
 inst_brew node
+inst_brew yarn
 inst_brew reattach-to-user-namespace
 inst_brew ssh-copy-id
 inst_brew terminal-notifier
