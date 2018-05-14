@@ -14,6 +14,8 @@ inst_brew xmlstarlet
 #inst_brew subversion
 inst_brew trash
 inst_brew shellcheck
+inst_brew jsonlint
+inst_brew tidy-html5
 inst_brew cmake
 inst_cask dash
 inst_cask dashlane
