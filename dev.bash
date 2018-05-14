@@ -20,6 +20,9 @@ inst_brew jsonlint
 inst_brew tidy-html5
 inst_brew cmake
 inst_cask dash
+inst_cask visual-studio-code
 inst_cask dashlane
 inst_gem bundler
+#inst_gem terminal-notifier
+inst_brew jq
 
