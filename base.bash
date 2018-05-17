@@ -2,7 +2,7 @@
 #
 # Must haves brew
 #
-for brew in "bash-completion" git tmux ripgrep vim fzf ; do
+for brew in "bash-completion" git tmux ripgrep vim neovim fzf ; do
     inst_brew "$brew"
 done
 
