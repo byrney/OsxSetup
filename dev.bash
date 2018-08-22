@@ -5,6 +5,8 @@ inst_brew rake-completion
 inst_brew git-sh
 inst_brew node
 inst_brew yarn
+inst_brew nvm "mkdir -p $HOME/.nvm"
+inst_nvm "9.11.1"
 inst_brew reattach-to-user-namespace
 inst_brew ssh-copy-id
 inst_brew terminal-notifier

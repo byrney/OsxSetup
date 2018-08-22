@@ -12,7 +12,7 @@ function status(){
     local line='---------------------------------------------------'
     local title="$1"
     local stat="$2"
-    printf "%s %s [%s]\n" "$title" "${line:${#title}}" "$stat"
+    printf "%s %s [%s]\\n" "$title" "${line:${#title}}" "$stat"
 }
 
 # Perform an action once.
@@ -30,7 +30,7 @@ function once() {
         status "$title" "NOP"
     else
         status "$title" "START"
-        $cmd
+        eval "$cmd"
         if [[ -z "$post" ]] ; then
             $post
         fi
@@ -93,6 +93,19 @@ function inst_conda(){
     local pkg="$1"
     local cmd="$conda install --yes $pkg"
     local check="$conda list | grep -qE ^$pkg"
+    once "$title" "$check" "$cmd"
+}
+
+# install a node version via nvm (which must already be installed)
+#
+#    $1 - name of gem
+function inst_nvm() {
+    local title="node $1"
+    local pkg="$1"
+    local nvmsh="/usr/local/opt/nvm/nvm.sh"
+    local setup="export NVM_DIR=\"$HOME/.nvm\" && source \"$nvmsh\""
+    local cmd="( $setup && nvm install $pkg )"
+    local check="( $setup && nvm list $pkg )"
     once "$title" "$check" "$cmd"
 }
 
