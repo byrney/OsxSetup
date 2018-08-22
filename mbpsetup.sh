@@ -49,6 +49,18 @@ function inst_brew() {
     once "$title" "$check" "$cmd"
 }
 
+# install a homebrew cask with a recipe file
+#
+#    $1 - name of cask
+function inst_cask_formula() {
+    local title="$1"
+    local pkg="$2"
+    local cmd="brew cask install $pkg"
+    local check="brew cask list | grep -iw $title"
+    local post="${3:-""}"
+    once "$title" "$check" "$cmd" "$post"
+}
+
 # install a homebrew cask
 #
 #    $1 - name of cask
