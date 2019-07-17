@@ -1,5 +1,5 @@
 
-inst_cask cord
+# inst_cask cord
 inst_cask virtualbox
 inst_cask virtualbox-extension-pack
 inst_cask vagrant

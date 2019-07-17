@@ -2,7 +2,7 @@
 #
 #v Quick look casks
 #
-inst_cask betterzipql
+# inst_cask betterzipql
 inst_cask qlcolorcode
 inst_cask qlstephen
 inst_cask quicklook-json

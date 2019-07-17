@@ -1,7 +1,6 @@
 
 inst_brew ruby
 inst_brew ruby-completion
-inst_brew rake-completion
 inst_brew git-sh
 inst_brew node
 inst_brew yarn
@@ -13,7 +12,6 @@ inst_brew terminal-notifier
 inst_brew wget
 inst_brew nmap
 inst_brew xmlstarlet
-#inst_brew subversion
 inst_brew trash
 inst_brew shellcheck
 inst_brew jsonlint
